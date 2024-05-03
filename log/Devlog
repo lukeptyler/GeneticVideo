@@ -1,0 +1,24 @@
+Day 1:
+
+Spent a lot of time getting the dependancies to all be compatible. Had to downgrade ghc version to 9.2.5 for repa
+ffmpeg-light was a huge pain, turn out it only works with ffmpeg version 4.4 even though it doesn't say this anywhere
+Found emoji dataset
+figured out loading and saving images
+converting between color spaces
+loaded in emojis as grayscale and scaled so brightest pixel was 1.0
+tint grayscale image with any rgb color
+converted all emojis to grayscale stamps to be loaded and tinted on the fly
+
+
+Day 2:
+
+Worked on generating a stamp with transparency
+premultiply alpha during tint to make pasting simpler
+overlay stamp onto image with arbitrary translation rotation scale tint and alpha
+  it takes each pixel on the background, transforms the coordinates into the stamp image space and then interpolate in the stamp to select a pixel
+
+
+Day 3:
+
+generate random stamp specs including stamp index
+image difference abs(r1-r2)+abs(g1-g2)+abs(b1-b2)
